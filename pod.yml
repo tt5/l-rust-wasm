@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+  annotations:
+    module.wasm.image/variant: compat-smart
+spec:
+  containers:
+    - name: httpservice
+      image: http-service
+      ports:
+        - containerPort: 8080
+          hostPort: 8080
+          protocol: TCP
+    - name: wolfi
+      image: cgr.dev/chainguard/wolfi-base
+      tty: true
+      stdin: true
+      ports:
+        - containerPort: 3000
+          hostPort: 3000
