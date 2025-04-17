@@ -3,5 +3,3 @@ https://github.com/containers/crun/issues/1046
 
 hyper_wasi
 tokio_wasi
-
-podman build --annotation "module.wasm.image/variant=compat" -t rectangle .

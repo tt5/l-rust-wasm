@@ -1,9 +1,1 @@
-podman system service -t 0 &
-sudo curl --unix-socket /run/podman/podman.sock http://d/v5.0.0/libpod/info
-https://docs.podman.io/en/latest/_static/api.html
-
-cargo new first --bin
-cargo build --target wasm32-wasi --release
-podman build --annotation "module.wasm.image/variant=compat" -t httpreq .
-podman kube play --annotation module.wasm.image/variant=compat pod.yml
-podman generate kube <podname>
+podman kube play dev pod.yml
